@@ -1,0 +1,9 @@
+* {
+  box-sizing: border-box; }
+
+body {
+  text-align: center;
+  display: flex;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none; }

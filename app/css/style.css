@@ -1,0 +1,175 @@
+/*============================================ Fonts ===================================================*/
+@font-face {
+  font-family: Cabernet;
+  src: url("../fonts/Cabernet JF Regular.woff2"); }
+
+@font-face {
+  font-family: EuclidCircularBRegular;
+  src: url("../fonts/EuclidCircularB-Regular.woff2"); }
+
+@font-face {
+  font-family: EuclidCircularBSemiBold;
+  src: url("../fonts/EuclidCircularB-SemiBold.woff2"); }
+
+@font-face {
+  font-family: RobotoRegular;
+  src: url("../fonts/Roboto-Regular.woff2"); }
+
+/*============================================ Variables ===================================================*/
+:root {
+  --text-blue: #040062;
+  --text-grey: #6D758D;
+  --bg-blue: #C7E3E9;
+  --bg-light-blue: #F5FBFF;
+  --btn-blue: #0013FF;
+  --bg-pink: #FEF1EF;
+  --main-font-size: 18px;
+  --large-font-size: 48px;
+  --spacing-small: 10px;
+  --spacing-middle: 15px;
+  --spacing-medium: 20px;
+  --spacing-semi-large: 30px;
+  --spacing-large: 38px; }
+
+/*============================================ Scrollbar and Global Styles ==================================*/
+::-webkit-scrollbar {
+  width: 8px; }
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--text-grey);
+  border-radius: 5px; }
+
+::-webkit-scrollbar-track {
+  background-color: #fff; }
+
+* {
+  box-sizing: border-box; }
+
+body {
+  font-family: RobotoRegular;
+  font-size: var(--main-font-size); }
+
+button {
+  cursor: pointer;
+  background-color: inherit;
+  display: block; }
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+li {
+  display: inline-block; }
+
+a {
+  text-decoration: none; }
+
+select {
+  display: block; }
+
+.container {
+  max-width: 1270px;
+  padding: 0 13px;
+  margin: 0 auto; }
+
+.container-fluid {
+  max-width: 1150px;
+  padding: 0 13px;
+  margin: 0 auto; }
+
+/*============================================ Header ===================================================*/
+.header-main {
+  min-height: 74px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+
+.nav {
+  margin: 0 auto;
+  text-transform: capitalize; }
+  .nav__line + li {
+    margin-left: var(--spacing-medium); }
+  .nav__link {
+    font-family: EuclidCircularBRegular;
+    font-size: var(--spacing-middle);
+    color: var(--text-blue); }
+
+.language-select {
+  margin-left: 0;
+  margin-right: var(--spacing-large);
+  cursor: pointer;
+  border: none;
+  font-size: var(--spacing-middle); }
+
+.btn {
+  color: #fff;
+  background-color: var(--btn-blue);
+  padding: var(--spacing-middle);
+  border-radius: 30px;
+  border: none;
+  outline: transparent;
+  font-size: var(--spacing-middle);
+  font-family: EuclidCircularBSemiBold; }
+
+/*============================================ Main-section ===================================================*/
+.main-section {
+  margin-bottom: 40px; }
+
+.main-screen {
+  padding: 80px 0;
+  background-color: var(--bg-blue);
+  text-align: center;
+  position: relative; }
+  .main-screen__text {
+    color: var(--text-blue);
+    font-family: Cabernet;
+    margin-bottom: 90px; }
+    .main-screen__text span {
+      display: block; }
+  .main-screen__text-small {
+    font-size: 60px;
+    line-height: 80px; }
+  .main-screen__text-medium {
+    font-size: 80px;
+    line-height: 106px; }
+  .main-screen__text-large {
+    font-size: 110px;
+    line-height: 146px; }
+  .main-screen__logo {
+    max-width: 500px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    .main-screen__logo .line {
+      display: block;
+      height: 2px;
+      max-width: 195px;
+      width: 100%;
+      background-color: #B3CCDB; }
+
+.left-image,
+.right-image {
+  background-image: url("../images/left-image.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 365px;
+  max-width: 280px;
+  width: 100%;
+  position: absolute;
+  left: 50px;
+  bottom: 0; }
+  .left-image__front,
+  .right-image__front {
+    position: absolute;
+    bottom: -20px;
+    right: 50%;
+    transform: translate(50%, 0); }
+
+.right-image {
+  background-image: url("../images/right-image.png");
+  left: auto;
+  right: 50px; }
