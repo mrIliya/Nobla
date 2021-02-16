@@ -78,6 +78,10 @@ select {
   padding: 0 13px;
   margin: 0 auto; }
 
+.title {
+  color: var(--text-blue);
+  font-family: Cabernet; }
+
 /*============================================ Header ===================================================*/
 .header-main {
   min-height: 74px;
@@ -122,8 +126,6 @@ select {
   text-align: center;
   position: relative; }
   .main-screen__text {
-    color: var(--text-blue);
-    font-family: Cabernet;
     margin-bottom: 90px; }
     .main-screen__text span {
       display: block; }
@@ -173,3 +175,72 @@ select {
   background-image: url("../images/right-image.png");
   left: auto;
   right: 50px; }
+
+/*============================================ Vision-section ===================================================*/
+.vision {
+  padding: 80px 0 75px 0; }
+
+.vision-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; }
+  .vision-item:nth-child(even) .image-block {
+    background-color: var(--bg-blue); }
+  .vision-item:nth-child(2) .center-image {
+    left: 43%;
+    bottom: 20%; }
+  .vision-item:nth-child(2) .center-image__front {
+    left: -21%;
+    bottom: -40%; }
+  .vision-item:nth-child(3) .center-image__front {
+    left: 40%; }
+  .vision-item:nth-child(4) .center-image {
+    left: 40%; }
+  .vision-item:nth-child(4) .center-image__front {
+    left: 4%; }
+  .vision-item:nth-child(5) .center-image {
+    left: 33%;
+    bottom: -5%; }
+  .vision-item:nth-child(5) .center-image__front {
+    left: 21%;
+    bottom: 7%; }
+
+.image-block {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 70px 0;
+  background-color: var(--bg-pink); }
+  .image-block img {
+    border-radius: var(--spacing-large);
+    z-index: 999; }
+
+.center-image {
+  max-width: 322px;
+  min-height: 390px;
+  width: 100%;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 30%;
+  bottom: 0; }
+  .center-image__front {
+    position: absolute;
+    left: 28%;
+    bottom: -3px; }
+
+.text-block {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 85px 10px 110px; }
+  .text-block__title {
+    font-size: var(--large-font-size);
+    line-height: 60px; }
+  .text-block__text {
+    color: var(--text-grey);
+    line-height: 27px; }
