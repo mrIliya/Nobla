@@ -185,15 +185,20 @@ h4 {
             transform: translateY(-4px) rotate(-45deg);
          }
       }
-		.nav-mobile{
-			transform: translateY(0);
-			height: 100vh;
-			opacity: 1;
-		}
+
+      .nav-mobile {
+         transform: translateY(0);
+         height: 100vh;
+         opacity: 1;
+
+         &__list {
+            height: 100vh;
+         }
+      }
    }
 
    &__btn {
-		display: none;
+      display: none;
       position: fixed;
       z-index: 999999;
       top: 20px;
@@ -216,19 +221,19 @@ h4 {
 
 .nav-mobile {
    height: 0;
-	opacity: 0;
+   opacity: 0;
    width: 100%;
    background-color: var(--bg-blue);
    position: fixed;
    top: 0;
    left: 0;
    z-index: 99999;
-	transform: translateY(-100%);
+   transform: translateY(-100%);
    transition: all linear .4s;
 
    &__list {
       width: 100%;
-		height: 100vh;
+      height: 0;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -567,6 +572,99 @@ h4 {
 
 }
 
+/*============================================ Modal ===================================================*/
+
+.modal {
+   transform: scale(0);
+
+   .modal-form {
+      transform: scale(0);
+   }
+
+   &.active {
+      transform: scale(1);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      z-index: 999999;
+
+      .modal__inner {
+         height: 100vh;
+         width: 100%;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         backdrop-filter: blur(2px);
+
+      }
+
+
+      .modal__close {
+         cursor: pointer;
+         position: absolute;
+         top: 15px;
+         right: 10px;
+         z-index: 9999;
+
+         &:hover {
+            div {
+               filter: opacity(55%);
+            }
+         }
+
+         div {
+            height: 4px;
+            width: 25px;
+            background-color: rgb(252, 62, 62);
+            transition: all linear .3s;
+         }
+
+         div:nth-child(1) {
+            transform: translateY(2px) rotate(45deg);
+         }
+
+         div:nth-child(2) {
+            transform: translateY(-2px) rotate(-45deg);
+         }
+      }
+
+      .modal-form {
+         position: relative;
+         display: flex;
+         flex-direction: column;
+         justify-content: space-around;
+         align-items: center;
+         width: 300px;
+         height: 300px;
+         background-color: var(--bg-blue);
+         border: 4px solid #fff;
+         border-radius: 10px;
+         padding: 25px 15px;
+         transform: scale(1);
+         transition: all ease .4s;
+
+         &__btn {
+            width: 100%;
+         }
+      }
+
+      .modal-form__input {
+         width: 100%;
+         border-radius: 50px;
+         height: 50px;
+         padding: 15px;
+         border: none;
+
+         &::placeholder {
+            font-size: 14px;
+            font-family: EuclidCircularBRegular;
+         }
+      }
+   }
+}
+
 
 /*============================================ Media ===================================================*/
 
@@ -788,9 +886,10 @@ h4 {
 
    .mobile-menu {
       display: block;
-		&__btn{
-			display: flex;
-		}
+
+      &__btn {
+         display: flex;
+      }
    }
 
 
@@ -955,6 +1054,11 @@ h4 {
          width: 100%;
          text-align: center;
       }
+   }
+
+   .modal-form__title {
+      font-size: 25px !important;
+      margin-bottom: 15px !important;
    }
 }
 

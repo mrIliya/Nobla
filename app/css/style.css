@@ -145,6 +145,8 @@ h4 {
     transform: translateY(0);
     height: 100vh;
     opacity: 1; }
+    .mobile-menu.active .nav-mobile__list {
+      height: 100vh; }
   .mobile-menu__btn {
     display: none;
     position: fixed;
@@ -175,7 +177,7 @@ h4 {
   transition: all linear .4s; }
   .nav-mobile__list {
     width: 100%;
-    height: 100vh;
+    height: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -420,6 +422,76 @@ h4 {
   .footer-social__line + li {
     margin-left: 30px; }
 
+/*============================================ Modal ===================================================*/
+.modal {
+  transform: scale(0); }
+  .modal .modal-form {
+    transform: scale(0); }
+  .modal.active {
+    transform: scale(1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 999999; }
+    .modal.active .modal__inner {
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      -webkit-backdrop-filter: blur(2px);
+              backdrop-filter: blur(2px); }
+    .modal.active .modal__close {
+      cursor: pointer;
+      position: absolute;
+      top: 15px;
+      right: 10px;
+      z-index: 9999; }
+      .modal.active .modal__close:hover div {
+        filter: opacity(55%); }
+      .modal.active .modal__close div {
+        height: 4px;
+        width: 25px;
+        background-color: #fc3e3e;
+        transition: all linear .3s; }
+      .modal.active .modal__close div:nth-child(1) {
+        transform: translateY(2px) rotate(45deg); }
+      .modal.active .modal__close div:nth-child(2) {
+        transform: translateY(-2px) rotate(-45deg); }
+    .modal.active .modal-form {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      width: 300px;
+      height: 300px;
+      background-color: var(--bg-blue);
+      border: 4px solid #fff;
+      border-radius: 10px;
+      padding: 25px 15px;
+      transform: scale(1);
+      transition: all ease .4s; }
+      .modal.active .modal-form__btn {
+        width: 100%; }
+    .modal.active .modal-form__input {
+      width: 100%;
+      border-radius: 50px;
+      height: 50px;
+      padding: 15px;
+      border: none; }
+      .modal.active .modal-form__input::-moz-placeholder {
+        font-size: 14px;
+        font-family: EuclidCircularBRegular; }
+      .modal.active .modal-form__input:-ms-input-placeholder {
+        font-size: 14px;
+        font-family: EuclidCircularBRegular; }
+      .modal.active .modal-form__input::placeholder {
+        font-size: 14px;
+        font-family: EuclidCircularBRegular; }
+
 /*============================================ Media ===================================================*/
 @media (max-width: 1300px) {
   .main-screen__logo {
@@ -625,7 +697,10 @@ h4 {
     padding-left: 0; }
   .footer__inner .footer-social {
     width: 100%;
-    text-align: center; } }
+    text-align: center; }
+  .modal-form__title {
+    font-size: 25px !important;
+    margin-bottom: 15px !important; } }
 
 @media (max-width: 380px) {
   .main-screen__text-large {
