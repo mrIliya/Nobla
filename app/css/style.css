@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*============================================ Fonts ===================================================*/
 @font-face {
   font-family: Cabernet;
@@ -128,6 +127,67 @@ h4 {
   outline: transparent;
   font-size: var(--spacing-middle);
   font-family: EuclidCircularBSemiBold; }
+
+.mobile-menu {
+  display: none; }
+  .mobile-menu.active .mobile-menu__btn {
+    justify-content: center; }
+    .mobile-menu.active .mobile-menu__btn div {
+      transition: all linear .4s; }
+    .mobile-menu.active .mobile-menu__btn div:nth-child(1) {
+      transform: translateY(4px) rotate(45deg); }
+    .mobile-menu.active .mobile-menu__btn div:nth-child(2) {
+      transition: none;
+      opacity: 0; }
+    .mobile-menu.active .mobile-menu__btn div:nth-child(3) {
+      transform: translateY(-4px) rotate(-45deg); }
+  .mobile-menu.active .nav-mobile {
+    transform: translateY(0);
+    height: 100vh;
+    opacity: 1; }
+  .mobile-menu__btn {
+    display: none;
+    position: fixed;
+    z-index: 999999;
+    top: 20px;
+    right: 20px;
+    height: 22px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all linear .3s; }
+    .mobile-menu__btn div {
+      height: 4px;
+      width: 30px;
+      background-color: var(--btn-blue); }
+
+.nav-mobile {
+  height: 0;
+  opacity: 0;
+  width: 100%;
+  background-color: var(--bg-blue);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  transform: translateY(-100%);
+  transition: all linear .4s; }
+  .nav-mobile__list {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+  .nav-mobile__line {
+    display: block;
+    margin-bottom: 30px;
+    text-transform: capitalize; }
+  .nav-mobile__link {
+    font-family: EuclidCircularBRegular;
+    font-size: var(--spacing-semi-large);
+    color: var(--text-blue); }
 
 /*============================================ Main-section ===================================================*/
 .main-section {
@@ -478,9 +538,12 @@ h4 {
 @media (max-width: 700px) {
   .header-main .btn {
     display: none; }
-  /* ========================================================добавить мобильное меню========== */
   .nav {
     display: none; }
+  .mobile-menu {
+    display: block; }
+    .mobile-menu__btn {
+      display: flex; }
   .language-select {
     display: none; }
   .main-screen {
@@ -550,8 +613,6 @@ h4 {
     font-size: 40px; } }
 
 @media (max-width: 400px) {
-  body {
-    background-color: purple; }
   .main-screen {
     padding: 5px; }
   .main-screen__logo {

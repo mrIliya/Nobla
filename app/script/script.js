@@ -1,4 +1,5 @@
-const body = document.querySelector('body')
-document.addEventListener('click', () => {
-	alert('stop it!!!')
+const menuBtn = document.querySelector('.mobile-menu__btn')
+const mobileMenu=document.querySelector('.mobile-menu')
+menuBtn.addEventListener('click', () => {
+	mobileMenu.classList.toggle('active')
 })
